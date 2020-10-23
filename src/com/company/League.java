@@ -1,6 +1,8 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class League <T extends Team>  {
 
@@ -21,8 +23,16 @@ public class League <T extends Team>  {
         }
     }
 
-    public ArrayList<Team> getClasament() {
-        return clasament;
-    }
+    public void showLeagueTable() {
+        this.clasament.sort(Comparator.comparing(Team::getPoints));
+        Collections.reverse(clasament);
 
+        System.out.println(this.name);
+        for (Team team : clasament) {
+            System.out.printf("%-20s %3s %n", team.getName(), team.getPoints());
+        }
+
+
+
+    }
 }

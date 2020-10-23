@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Comparator;
-
 public abstract class Team  implements Comparable <Team> {
 
     private String name;

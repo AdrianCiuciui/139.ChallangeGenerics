@@ -38,13 +38,7 @@ public class Main {
         cfr.matchResult(dinamo, 2, 2);
         steaua.matchResult(dinamo,3,2);
 
-        ligaDeFotbal.getClasament().sort(Comparator.comparing(Team::getPoints));
-        Collections.reverse(ligaDeFotbal.getClasament());
-
-        System.out.println("");
-        for (Team team : ligaDeFotbal.getClasament()) {
-            System.out.printf("%-20s %3s %n",team.getName(), team.getPoints());
-        }
+        ligaDeFotbal.showLeagueTable();
 
         System.out.println("\n ================== \n");
         // Baschet zone
@@ -66,13 +60,6 @@ public class Main {
         superIasi.matchResult(mobitelco, 112, 70);
         superIasi.matchResult(putereaOradea, 112, 70);
 
-
-        ligaDeBaschet.getClasament().sort(Comparator.comparing(Team::getPoints));
-        Collections.reverse(ligaDeBaschet.getClasament());
-
-        System.out.println("");
-        for (Team team : ligaDeBaschet.getClasament()) {
-            System.out.printf("%-20s %3s %n",team.getName(), team.getPoints());
-         }
+        ligaDeBaschet.showLeagueTable();
         }
 }
